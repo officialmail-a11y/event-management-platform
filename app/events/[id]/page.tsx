@@ -16,7 +16,7 @@ export default async function EventDetailPage(
   return (
     <div className="mx-auto w-full max-w-xl px-4 py-12">
       <Link
-        href="/"
+        href="/events"
         className="rounded-[6.2rem] text-sm text-muted transition-colors hover:text-ink"
       >
         &larr; Back to events

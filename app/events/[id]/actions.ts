@@ -6,6 +6,9 @@ import { deleteEvent as deleteEventFromStore } from "@/app/lib/events";
 
 export async function deleteEvent(id: string) {
   await deleteEventFromStore(id);
+  // Deleting an event cascades to its participants (see migrations), which
+  // changes the dashboard's stats/table.
   revalidatePath("/");
-  redirect("/");
+  revalidatePath("/events");
+  redirect("/events");
 }

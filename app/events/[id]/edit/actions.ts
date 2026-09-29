@@ -32,7 +32,7 @@ export async function editEvent(
   }
 
   await updateEvent(id, { title, date, location, description });
-  revalidatePath("/");
+  revalidatePath("/events");
   revalidatePath(`/events/${id}`);
   redirect(`/events/${id}`);
 }

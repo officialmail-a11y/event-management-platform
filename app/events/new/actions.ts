@@ -32,6 +32,6 @@ export async function createEvent(
   }
 
   await addEvent({ title, date, location, description });
-  revalidatePath("/");
-  redirect("/");
+  revalidatePath("/events");
+  redirect("/events");
 }
